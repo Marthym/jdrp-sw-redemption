@@ -1,0 +1,48 @@
+sudo: false
+addons:
+  apt:
+    packages:
+    - texlive-base
+    - texlive-latex-recommended
+    - texlive-extra-utils
+    - texlive-fonts-recommended
+    - texlive-font-utils
+    - texlive-lang-french
+    - texlive-latex-extra
+    - texlive-math-extra
+    - texlive-xetex
+    - texlive-pictures
+    - pgf
+    - latex-xcolor
+    - lmodern
+    - latexmk
+
+install:
+- mkdir -p ~/.fonts
+- cp fonts/* ~/.fonts/
+- fc-cache -f -v
+
+script:
+- latexmk
+
+deploy:
+  - provider: releases
+    api_key:
+      secure: DgG2D29uPVbTLAfD3cte6hGT35CppoaNv56PENgvrHpfAIFWhxsjLy9x/qvEGXSPYA6bHpOIIrjT4cwBHZN7HxPsrtL+xuXCZYCP1G6XT8RteHAtCterOvvtLtihe2iW6PLxCgCR8etDpxKnE4s0/Jwt+s0eNm73Q7FsolN3aSk=
+    file: cv-fred-combes.pdf
+    skip_cleanup: true
+    draft: true
+    on:
+      repo: Marthym/jdrp-starwars-reloaded
+
+  - provider: releases
+    api_key:
+      secure: DgG2D29uPVbTLAfD3cte6hGT35CppoaNv56PENgvrHpfAIFWhxsjLy9x/qvEGXSPYA6bHpOIIrjT4cwBHZN7HxPsrtL+xuXCZYCP1G6XT8RteHAtCterOvvtLtihe2iW6PLxCgCR8etDpxKnE4s0/Jwt+s0eNm73Q7FsolN3aSk=
+    file: cv-fred-combes.pdf
+    skip_cleanup: true
+    on:
+      tags: true
+      repo: Marthym/jdrp-starwars-reloaded
+
+notifications:
+  email: false
