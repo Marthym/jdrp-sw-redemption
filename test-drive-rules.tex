@@ -2,11 +2,14 @@
 \usepackage[bg-letter]{dnd} % Options: bg-a4, bg-letter, bg-full, bg-print, bg-none.
 \usepackage[french]{babel} % Trennungsregeln und autom. Überschriften in n. dt. RS
 \usepackage[utf8]{inputenc}
-
+\usepackage{lettrine}
+\setcounter{DefaultLines}{3}
+\setlength{\DefaultNindent}{0em}
 
 \begin{document} % Start document
+\AddToShipoutPicture*{\FirstPageBackground}
 \include{tex/00_page_de_garde}
-\AddToShipoutPicture*{\MainPageBackground}
-\include{tex/01_intrduction}
-\ClearShipoutPicture
+\AddToShipoutPicture{\MainPageBackground}
+\include{tex/01_regles}
+\include{tex/02_personnage}
 \end{document} % End document
