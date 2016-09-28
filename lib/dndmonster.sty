@@ -4,11 +4,11 @@
 % Macro to print stats with autocomputed modifier
 % e.g. \stat{12} prints "12 (+1)"
 \newcommand{\stat}[1]{%
-   \FPeval{\mod}{(#1 - 10)/2}%
-   \FPifpos\mod%
-   \FPeval{\mod}{clip(trunc(mod,0))}#1 (+\mod)%
+   \FPeval{\mod}{(#1 - 4)}%
+   \FPifzero\mod%
+   \FPeval{\mod}{clip(trunc(mod,0))}D#1%
    \else%
-   \FPeval{\mod}{clip(trunc(mod-0.5,0))}#1 (\mod)%
+   \FPeval{\mod}{clip(trunc(mod,0))}D#1 (+\mod)%
    \fi%
 }
 
@@ -77,31 +77,43 @@
 %
 % Macros for use within the monster environment
 %
-\newkeycommand\basics[armorclass=0, hitpoints=0, speed=0]{%
+\newkeycommand\basics[type=0, planet=0, language=0]{%
 	\color{titlered}
-	\textbf{Armor Class} \commandkey{armorclass}\\
-	\textbf{Hit Points} \commandkey{hitpoints}\\
-	\textbf{Speed} \commandkey{speed}\\
+	\textbf{Type} \commandkey{type}\\
+  \textbf{Planète} \commandkey{planet}\\
+	\textbf{Langage} \commandkey{language}\\
 }
 
 % Taubular enviornment for stats-block
-\newkeycommand\stats[STR=\stat{10},
-                        DEX=\stat{10},
-                        CON=\stat{10},
-                        INT=\stat{10},
-                        WIS=\stat{10},
-                        CHA=\stat{10}]{
-    {\footnotesize
-	\hspace*{-3.5pt}
-	\resizebox{0.97\linewidth}{\height}{
-		\begin{tabular}{cccccc}
-			\rule{0pt}{3.7mm} %adds space between hline and table
-			\textbf{STR} & \textbf{DEX} & \textbf{CON} & \textbf{INT} & \textbf{WIS} & \textbf{CHA}\\
-			\commandkey{STR} & \commandkey{DEX} & \commandkey{CON} & \commandkey{INT} & \commandkey{WIS} & \commandkey{CHA}
-		\end{tabular}
-	}
-	\\[0.4em] %adds space after table
-    }
+\newkeycommand\traits[AGI=\stat{4},
+                        AME=\stat{4},
+                        FOR=\stat{4},
+                        INT=\stat{4},
+                        VIG=\stat{4}]{
+    {
+    \vspace{-10pt}
+	\begin{center}
+    \begin{tabular*}{0.95\linewidth}{c @{\extracolsep{\fill}} cccc}
+			\textbf{AGI} & \textbf{AME} & \textbf{FOR} & \textbf{INT} & \textbf{VIG}\\
+			\commandkey{AGI} & \commandkey{AME} & \commandkey{FOR} & \commandkey{INT} & \commandkey{VIG}
+		\end{tabular*}
+	\end{center}
+  }
+}
+
+\newkeycommand\stats[ALL=6,
+                        PAR=2, % 2 + 0,5 x la compétence de combat arrondie à l'inférieur (d12+1 en combat = 8)
+                        RES=4,
+                        CHA=3]{ % 2 + 0,5 x VIG
+  {
+    \vspace{-10pt}
+    \begin{center}
+      \begin{tabular*}{0.85\linewidth}{c @{\extracolsep{\fill}} cccc}
+        \textbf{ALL} & \textbf{PAR} & \textbf{RES} & \textbf{CHA} & \textbf{}\\
+        \commandkey{ALL} & \commandkey{PAR} & \commandkey{RES} & \commandkey{CHA} & \textbf{}
+      \end{tabular*}
+    \end{center}
+  }
 }
 
 \newkeycommand\details[skills=,
@@ -110,9 +122,9 @@
                       conditionimmunities=,
                       damageresistances=,
                       damagevulnerabilities=,
-                      senses=-,
-                      languages=-,
-                      challenge=0]{%
+                      senses=,
+                      size=,
+                      challenge=]{%
   \ifcommandkey{savingthrows}
     {\textbf{Saving Throws} \commandkey{savingthrows}\\}{}
   \ifcommandkey{skills}
@@ -126,8 +138,11 @@
   \ifcommandkey{conditionimmunities}
     {\textbf{Condition Immunities} \commandkey{conditionimmunities}\\}{}
   % These traits appear to always be present.
-  {\textbf{Senses} \commandkey{senses}\\}
-  {\textbf{Languages} \commandkey{languages}\\}
-  {\textbf{Challenge} \commandkey{challenge}\\}
+  \ifcommandkey{senses}
+    {\textbf{Senses} \commandkey{senses}\\}{}
+  \ifcommandkey{size}
+    {\textbf{Taille} \commandkey{size}\\}{}
+  \ifcommandkey{challenge}
+    {\textbf{Challenge} \commandkey{challenge}\\}{}
 \color{black}
 }
