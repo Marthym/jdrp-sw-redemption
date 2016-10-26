@@ -1,12 +1,24 @@
 \documentclass[10pt,twoside,twocolumn]{article}
 \usepackage[bg-letter]{dnd} % Options: bg-a4, bg-letter, bg-full, bg-print, bg-none.
-\usepackage[french]{babel} % Trennungsregeln und autom. Überschriften in n. dt. RS
+\usepackage[french]{babel} 
 \usepackage{lettrine}
 \usepackage[export]{adjustbox}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,                         
+    linkcolor=blue, % Couleur des liens internes
+    citecolor=red, % Couleur des numéros de la biblio dans le corps
+    urlcolor=blue  } % Couleur des url
+
 \setcounter{DefaultLines}{3}
 \setlength{\DefaultNindent}{0em}
 
 \usepackage{wrapfig}
+
+\usepackage[style=verbose]{biblatex}
+\setlength\bibitemsep{1.5\itemsep}
+\bibliography{references}
 
 \begin{document} % Start document
 \AddToShipoutPicture*{\FirstPageBackground}
@@ -14,4 +26,7 @@
 \AddToShipoutPicture{\MainPageBackground}
 \include{tex/01_regles}
 \include{tex/02_personnage}
+\onecolumn
+\nocite{*}
+\printbibliography
 \end{document} % End document
