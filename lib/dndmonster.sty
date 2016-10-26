@@ -4,7 +4,7 @@
 % Macro to print stats with autocomputed modifier
 % e.g. \stat{12} prints "12 (+1)"
 \newcommand{\stat}[1]{%
-   \FPeval{\mod}{(#1 - 4)}%
+   \FPeval{\mod}{(#1 - 6)}%
    \FPifzero\mod%
    \FPeval{\mod}{clip(trunc(mod,0))}D#1%
    \else%
@@ -85,11 +85,11 @@
 }
 
 % Taubular enviornment for stats-block
-\newkeycommand\traits[AGI=\stat{4},
-                        AME=\stat{4},
-                        FOR=\stat{4},
-                        INT=\stat{4},
-                        VIG=\stat{4}]{
+\newkeycommand\traits[AGI=\stat{6},
+                        AME=\stat{6},
+                        FOR=\stat{6},
+                        INT=\stat{6},
+                        VIG=\stat{6}]{
     {
     \vspace{-10pt}
 	\begin{center}
