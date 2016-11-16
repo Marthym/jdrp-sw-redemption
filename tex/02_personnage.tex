@@ -9,9 +9,9 @@ Chaque personnage commence le jeu avec d4 dans chaque Attribut et dispose de 5pt
 Les Compétences représentent les aptitudes apprises comme le Tir, le Combat, les connaissances professionnelles ou scientifiques et ainsi de suite. Elles sont générales et englobent tous les aspects qui leur sont reliés. Par exemple Tir englobe les fusils, les arcs, les lance-roquettes et toutes les armes à distance. Vous disposez de 15 points à répartir entre vos Compétences. Chaque dé de Compétence coûte 1 point (en commençant à d4) tant qu’il est inférieur ou égal à l’Attribut dont il dépend (noté entre parenthèses près du nom de la Compétence). Chaque dé de Compétence supérieur à l’Attribut dont il dépend coûte 2 points. De même que pour les Attributs, aucune Compétence ne peut dépasser d12.
 
 \subsection{Races Jouable}
+% To be balanced correctly, all race most have CAP +2
 Vous pouvez choisir pour votre personnage n’importe quelle race disponible dans l'univers de Starwars. 
 
-\newpage
 \subsubsection{Humain}
 \begin{flushright}
 \begin{tabular}{ l l }
@@ -28,25 +28,46 @@ Vous pouvez choisir pour votre personnage n’importe quelle race disponible dan
 Cette race comprend aussi bien les humains au sens strict (qu’ils soient originaires de Coruscant, de Correlia, de Kuat, de Naboo...) que les humanoïdes dont les caractéristiques physiques, intellectuelles, sociales et culturelles sont suffisamment proches de celles des humains pour qu’il soit possible de les assimiler en termes de jeu. Cela inclut par exemple les iridoniens (zabraks) et les dévaroniens.
 
 \begin{description}[align=left]
-\item [Adaptabilité] Les humains sont une race pleine de ressources, ils s'adapte rapidement à toutes sorte de difficultés. Pour cela il dispose d'une compétence à d6 d'office.
+\item [Adaptabilité] 	CAP +2
+	Les humains sont une race pleine de ressources, ils s'adaptent rapidement à toutes sorte de difficultés ou environnements.\\
+	\emph{Compétence à d6}
 \end{description}
 
-\newpage
-\begin{monsterbox}{Barabel}
-	\textit{\includegraphics[width=5cm]{img/races/barabel.png}}
-	\hline
-	\basics[%
-		type = Reptile,
-		planet = Barab I,
-		language = Barabel
-	]
-	\hline
-	\traits
-	\stats
-	\hline
-	Originaire de Barab I, les Barabels sont resté une race relativement primitive et isolée. Les Barabels vivent en clans dans un société principalement matriarcale. Ils sont fasciné par la guerre, la violence et les armes. Les Barabels ne sont pas profondément cruels mais il restent agressif de nature. En raison des nombreux rituels précédent les négociations, la diplomatie avec les Barabels est un exercice compliqué.
-\end{monsterbox}
+\subsubsection{Barabel}
 
+\begin{flushright}
+\begin{tabular}{ l l }
+	\textbf{Type} & Reptile \\
+   	\textbf{Planète} & Barab I \\
+   	\textbf{Language} & Barabel \\
+\end{tabular}
+\end{flushright}
+
+\vspace{-50}
+\includegraphics[width=5cm]{img/races/barabel.png}
+
+Originaire de Barab I, les Barabels sont resté une race relativement primitive et isolée. Les Barabels vivent en clans dans un société principalement matriarcale. Ils sont fasciné par la guerre, la violence et les armes. Les Barabels ne sont pas profondément cruels mais il restent agressif de nature. En raison des nombreux rituels précédent les négociations, la diplomatie avec les Barabels est un exercice compliqué.
+
+Le Barabel adulte est un reptile bipède dont la taille dépasse toujours les deux mètres. Sa dentition est formée d'une multitude de dents en forme d'aiguilles qui peuvent atteindre jusqu'à cinq centimètres de long et ses mains sont équipées de griffes puissantes.
+
+\begin{description}[align=left]
+\item [Enfance difficile] 	% CAP +1 +1
+		De par l'environnement hostile de leur planète natale, les Barabels possèdent une résistance accrue à la chaleur et aux radiations.\\
+		\emph{+4 en Résistance à la chaleur}\\
+		\emph{+4 en Résistance aux radiations}\\
+		\emph{+1 en Résistance}\\
+\item [\OE{il} Ophidien] 	% CAP +1
+		Les yeux ophidiens du Barabel lui permettent de capter la plupart des ondes lumineuses allant du jaune à l'infrarouge mais il confond facilement les couleurs tirant dans les bleus et violets.
+\item [Arme naturelle]		% CAP +1
+		Les mains des Barabels sont équipé de puissante griffes.\\
+		\emph{For + d6 de dégâts}
+\item [Primitif]			% CAP -3
+		Les Barabels sont une race encore primitive.\\
+		\emph{Int <= d6}
+\end{description}
+
+
+\newpage
 \begin{monsterbox}{Bothan}
 	\textit{Small metasyntatic variable (golbinoid), neutral evil}\\
 	\hline
