@@ -15,7 +15,7 @@ Vous pouvez choisir pour votre personnage n’importe quelle race disponible dan
 \subsubsection{Humain}
 \begin{flushright}
 \begin{tabular}{ l l }
-	\textbf{Type} 			& Mammifère \\
+	\textbf{Type} 			& Mammifère, Humanoïde \\
    	\textbf{Planète} 		& Terre \\
    	\textbf{Language} 		& Basic \\
    	\textbf{Orientation} 	& Neutre \\
@@ -56,8 +56,7 @@ Le Barabel adulte est un reptile bipède dont la taille dépasse toujours les de
 \item [Enfance difficile] 	% CAP +1 +1
 		De par l'environnement hostile de leur planète natale, les Barabels possèdent une résistance accrue à la chaleur et aux radiations.\\
 		\emph{+4 en Résistance à la chaleur}\\
-		\emph{+4 en Résistance aux radiations}\\
-		\emph{+1 en Résistance}\\
+		\emph{+4 en Résistance aux radiations}
 \item [\OE{il} Ophidien] 	% CAP +1
 		Les yeux ophidiens du Barabel lui permettent de capter la plupart des ondes lumineuses allant du jaune à l'infrarouge mais il confond facilement les couleurs tirant dans les bleus et violets.\\
 		\emph{Infravision}
@@ -118,7 +117,6 @@ La structure sociale des Bothans est constituée par des clans familiaux, dont l
 		\emph{Prudent}
 \end{description}
 
-
 \subsubsection{Chiss}
 \includegraphics[width=5cm]{img/races/chiss.png}
 
@@ -126,14 +124,35 @@ La structure sociale des Bothans est constituée par des clans familiaux, dont l
 
 \begin{flushright}
 \begin{tabular}{ l l }
-	\textbf{Type} 			& Félin \\
-   	\textbf{Planète} 		& Bothawui \\
-   	\textbf{Language} 		& Bothese \\
-   	\textbf{Orientation} 	& Lumineux \\
+	\textbf{Type} 			& Humanoïde \\
+   	\textbf{Planète} 		& Csilla \\
+   	\textbf{Language} 		& Cheunh \\
+   	\textbf{Orientation} 	& Obscur \\
 \end{tabular}
 \end{flushright}
 
-\vspace{10}
+\vspace{15}
+
+Les Chiss font en moyenne 1,80m et ont une morphologie humaine. Cependant, il est impossible de les confondre à cause de leur peau bleue et de leurs yeux d’un rouge éclatant. Ils ont toujours des cheveux noirs, bien qu’avec les années, certains voient des cheveux blancs apparaitre. \\ 
+
+La société Chiss est très évoluée. Ils ont de l’intérêt pour les arts et la science et maintiennent une puissante force militaire. Ils ont la réputation d’être de fins stratèges militaires mais leur façon de penser se retrouve dans tous les domaines de la vie quotidienne. Ils réfléchissent et pensent à différents points de vue et aux alternatives lorsqu’ils doivent prendre une décision.  
+
+\begin{description}[align=left]
+\item [Charismatique] 			% CAP +2 +2 +1
+		Les Chiss sont des êtres charismatique habitué à commander des armées.\\
+		\emph{+2 Cha}\\
+		\emph{Commandement}\\
+		\emph{d6 Connaissance (Combats)}
+\item [Aquité visuelle] 		% CAP +1
+		Les modifications qu’ont subies leurs yeux leur ont également donné une plus grande acuité visuelle.\\
+		\emph{d6 Perception}
+\item [Arrogant] 				% CAP -2
+		Les Chiss sont fréquemment perçus par le reste de la galaxie, comme un peuple arrogant, calculateur et distant.\\
+		\emph{Arrogant}
+\item [Insensible à la Force] 		% CAP -1
+		Les Chiss ne sont pas connus pour être une espèce sensible à la Force. Ils n’ont eut qu’un seul exemple d’individu sensible, en la personne de Sev’rance Tann. Cette dernière avait optée pour le côté obscur.\\
+		\emph{A la création, l'augmentation de l'\^Ame coute 2pt}
+\end{description}
 
 \subsubsection{Droïde}
 \subsubsection{Gungan}
@@ -142,47 +161,6 @@ La structure sociale des Bothans est constituée par des clans familiaux, dont l
 \subsubsection{Twl'lek}
 \subsubsection{Wookie}
 \subsubsection{Zabrak}
-
-\newpage
-\begin{monsterbox}{Bothan}
-	\textit{Small metasyntatic variable (golbinoid), neutral evil}\\
-	\hline
-	\basics[%
-	type = Félin,
-	planet = Bothawui,
-	language = Bothese
-	]
-	\hline
-	\traits[
-    AGI = \stat{8} % This stat command will autocomplete the modifier for you
-	]
-	\stats[
-    RES = 0 % This stat command will autocomplete the modifier for you
-	]
-
-	\hline
-	
-	\details[%
-	% If you want to use commas in these sections, enclose the description in braces.
-	size = 1m50
-	]
-	\hline 
-	\monstersection{Descriptif}
-	Les Bothans sont des humanoïdes trappus, dont le corps est recouvert d'une épaisse fourrure, donc les ondulations sont directement le reflet des sentiments éprouvés par ces êtres. 
-  	Le peuple bothan est originaire de la planète Bothawui, un monde cosmopolite épargné des troubles de la Guerre Civile Galactique en raison de la neutralité officielle du gouvernement bothan. Plusieurs colonies ont également été construites sur des planètes proches, telles que Kothlis, qui est désormais le siège d'une importante communauté. Toutes ces colonies forment l'Espace Bothan. 
-	\monstersection{Actions}
-	\begin{monsteraction}[Generate text]
-		This one can generate tremendous amounts of text! Though only when it wants to.
-	\end{monsteraction}
-
-	\begin{monsteraction}[More actions]
-    See, here he goes again! Yet more text.
-	\end{monsteraction}
-\end{monsterbox}
-
-\begin{quotebox}
-	As you approach this template you get a sense that the blood and tears of many generations went into its making. A warm feeling welcomes you as you type your first words.
-\end{quotebox}
 
 \newpage % Acts as columbreak because of twocolumn option; for pagebreak use \clearpage
 
