@@ -25,10 +25,16 @@
 \setlength\bibitemsep{1.5\itemsep}
 \bibliography{references}
 
+\newcommand*{\doctitle}{\TitleFont STARWARS Reloaded \normalsize v3.0}
+\title\doctitle
+\author{Marthym}
+\date{}
+
 \begin{document} % Start document
 \AddToShipoutPicture*{\FirstPageBackground}
 \include{tex/00_page_de_garde}
 \AddToShipoutPicture{\MainPageBackground}
+\include{tex/01_preface}
 \include{tex/01_regles}
 \include{tex/02_personnage}
 \onecolumn
