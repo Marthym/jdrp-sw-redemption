@@ -1,4 +1,4 @@
 $pdf_mode = "1";
-$pdflatex = "mkdir -p build/tex/races && xelatex %O -interaction=nonstopmode %S";
 $out_dir="build";
+$pdflatex = "find tex -type d ! -path './.git*' -exec mkdir -p $out_dir/{} \\; && xelatex %O -interaction=nonstopmode %S";
 $pdf_previewer  = 'gv --watch';
