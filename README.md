@@ -1,5 +1,5 @@
-# Starwars Reloaded
-Une adaptation du JdR Savage World au monde de Starwars.
+# Star Wars Freedom Expansion
+Une adaptation du JdR Savage World au monde de Star Wars.
 
 ## Build
 
