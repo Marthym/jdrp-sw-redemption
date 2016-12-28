@@ -2,29 +2,8 @@
 %To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/ or send a letter 
 %  to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
 
-\documentclass[10pt,twoside,twocolumn]{article}
-\usepackage[bg-letter]{dnd} % Options: bg-a4, bg-letter, bg-full, bg-print, bg-none.
-\usepackage[french]{babel} 
-\usepackage{lettrine}
-\usepackage[export]{adjustbox}
-\usepackage[bottom]{footmisc} % Note de bas de page en bas plutôt que juste après le texte
-\usepackage{enumitem}
-
-\usepackage{hyperref}
-\hypersetup{
-    colorlinks=true,                         
-    linkcolor=blue, % Couleur des liens internes
-    citecolor=red, % Couleur des numéros de la biblio dans le corps
-    urlcolor=blue  } % Couleur des url
-
-\setcounter{DefaultLines}{3}
-\setlength{\DefaultNindent}{0em}
-
-\usepackage{wrapfig}
-
-\usepackage[style=verbose,sorting=none]{biblatex}
-\setlength\bibitemsep{1.5\itemsep}
-\bibliography{references}
+\documentclass{jdrp}
+%\usepackage[bg-letter]{dnd} % Options: bg-a4, bg-letter, bg-full, bg-print, bg-none.
 
 \newcommand*{\docversion}{0.1}
 \newcommand*{\doctitle}{ Star Wars, Freedom Expansion}
@@ -33,8 +12,10 @@
 \author{}
 \date{}
 
+\newcommand*{\crg}{{\aurebesh\Large \$}}
+
 \begin{document} % Start document
-\raggedbottom
+
 \AddToShipoutPicture*{\FirstPageBackground}
 \include{chapitres/preambule/couverture}
 \AddToShipoutPicture{\MainPageBackground}
