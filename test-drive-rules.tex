@@ -10,15 +10,18 @@
 \newcommand*{\docversion}{\citefield{jdrp-starwars}{version}}
 \newcommand*{\doctitle}{~\citetitle{jdrp-starwars}~}
 \newcommand*{\swfe}{{\jedifont \doctitle}}
-\title{\TitleFont \doctitle \normalsize \\v\docversion}
-\author{}
-\date{}
+
+\hypersetup{
+	pdftitle={Star Wars Redemption},
+	pdfsubject={Savage Worlds adaptation for Star Wars},
+	pdfauthor={Marthym},
+	pdfkeywords={starwars,savage,worlds,jdr},
+	pdfcopiright={This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License.}
+}
 
 \begin{document}
 
-	\AddToShipoutPicture*{\FirstPageBackground}
 	\include{chapitres/preambule/couverture}
-	\AddToShipoutPicture{\MainPageBackground}
 	\include{chapitres/preambule/preface}
 	\include{chapitres/regles/regles}
 	\include{chapitres/personnages/personnages}

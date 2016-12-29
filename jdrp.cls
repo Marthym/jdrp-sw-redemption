@@ -11,10 +11,10 @@
 
 \RequirePackage[french]{babel} 			% French language
 \RequirePackage[margin=1.5cm]{geometry}	% Page margin
-\RequirePackage{lettrine}
 \RequirePackage[export]{adjustbox}
 \RequirePackage[bottom]{footmisc} 		% Note de bas de page en bas plutôt que juste après le texte
 \RequirePackage{enumitem}
+\RequirePackage{lettrine}
 
 \RequirePackage{hyperref}
 \hypersetup{
@@ -38,9 +38,21 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Backgrounding 
 \RequirePackage{eso-pic}
+
+\newcommand\AtTextUpperRight[1]{\AtTextUpperLeft{%
+   \makebox[\textwidth][r]{#1}}}
+
 \AddToShipoutPictureBG{%
-  \AtPageLowerLeft{\includegraphics[width=\paperwidth,height=\paperheight]{img/bg-a4-odd.jpg}}
+	\ifnum\value{page}>1
+  	\AtPageLowerLeft{\includegraphics[width=\paperwidth,height=\paperheight]{img/bg-a4-odd.jpg}}
+  	\fi
   }
+
+\AddToShipoutPicture{
+	\ifthenelse{\isodd{\thepage}}
+    	{\AtTextUpperLeft{\hspace{1.5\baselineskip}\hspace{\textwidth}\rotatebox{-90}{\scalebox{1.5}{\aurebesh\textcolor{uppergold}{\leftmark}}}}}
+    	{\AtTextUpperLeft{\hspace{-2\baselineskip}\rotatebox{-90}{\scalebox{1.5}{\aurebesh\textcolor{uppergold}{\leftmark}}}}}
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Fonts
@@ -59,6 +71,10 @@
 	Path=font/,
     Extension=.otf
 ]{Aurebesh}
+
+% Lettrine
+\renewcommand{\LettrineFontHook}{\jedifont}
+\renewcommand{\DefaultNindent}{5pt}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Columns setup
@@ -83,6 +99,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Footer - Must be before sectioning ...
 \RequirePackage{fancyhdr} 			  % Adaptation of the footers
+
+\thispagestyle{empty}
 \pagestyle{fancy}
 
 \footskip = 20pt %push the footer down so it fits with the decal from the bg-img
@@ -96,12 +114,12 @@
 
 \fancyfoot[LE]{
 	\textcolor{uppergold}{\thepage}
-	\hspace*{0.7cm}
+	\hspace*{0.2cm}
 	\raisebox{-10pt}{\textcolor{uppergold}{\nouppercase\leftmark}}
 	}
 
 \fancyfoot[RO]{
-	\raisebox{10pt}{\textsc{\textcolor{uppergold}{\nouppercase\rightmark}}}
+	\raisebox{-10pt}{\textsc{\textcolor{uppergold}{\nouppercase\rightmark}}}
 	\hspace*{1cm}
 	\textcolor{uppergold}{\thepage}
 	}
@@ -115,7 +133,7 @@
 
 % Adjust section and subsection colors and font (change 0em to 1em if you commented the removal of section numbering)
 \titleformat{\section}
-{\color{titlered}\bfseries\scshape\Huge\raggedright}{\thesection}{0em}{}
+{\color{titlered}\bfseries\scshape\jedifont\Huge\raggedright}{\thesection}{0em}{}
 
 \titleformat{\subsection}
 {\color{titlered}\scshape\Large\raggedright}{\thesubsection}{0em}{}[{\titleline{\color{undergold}\titlerule[1pt]}}]
