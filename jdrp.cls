@@ -15,6 +15,8 @@
 \RequirePackage[bottom]{footmisc} 		% Note de bas de page en bas plutôt que juste après le texte
 \RequirePackage{enumitem}
 \RequirePackage{lettrine}
+\RequirePackage[most]{tcolorbox}
+\RequirePackage[table]{xcolor}
 
 \RequirePackage{hyperref}
 \hypersetup{
@@ -23,7 +25,6 @@
     citecolor=red, 		% Couleur des numéros de la biblio dans le corps
     urlcolor=blue  } 	% Couleur des url
 
-\RequirePackage[table]{xcolor}
 \setcounter{DefaultLines}{3}
 \setlength{\DefaultNindent}{0em}
 
@@ -93,7 +94,7 @@
 \definecolor{uppergold}{HTML}{B89A67}	%e.g. used for pagenumbers and footer
 %\definecolor{puregold}{HTML}{E69A28}	%e.g. used for top line in newer monsterbox
 %\definecolor{monstertan}{HTML}{FDF1DC}	%e.g. used for newer monsterblock
-%\definecolor{monstertandark}{HTML}{F0DBB5}	%e.g. used for older monsterbox
+\definecolor{monstertandark}{HTML}{F0DBB5}	%e.g. used for older monsterbox
 \definecolor{commentgreen}{HTML}{E0E5C1} % e.g. used in table and green commentbox
 \definecolor{itemtablepink}{HTML}{E9CDC2} % e.g. used in item tables instead of the green
 %\definecolor{rulered}{HTML}{9C2B1B}		%e.g. used for triangular rule in statsblock
@@ -181,3 +182,33 @@
 	\tabularx{\linewidth}{#1}
 	}
 	{\endtabularx\vspace{8pt plus 1pt}\noindent} 
+
+\newtcolorbox{paperbox}[2][]{
+	frame hidden,
+	boxrule=0pt,
+	breakable,
+	enhanced,
+	before skip=11pt plus 1pt,
+	toptitle=3mm,
+	boxsep=0.25ex,
+	left=8pt,
+	right=8pt,
+	fonttitle=\scshape\bfseries\color{black},
+	title=#2,
+	arc=0mm,
+	parbox = false,
+	borderline north={1pt}{-0.5pt}{black},
+	borderline south={1pt}{-0.5pt}{black},
+	colback=monstertandark,
+	colframe=monstertandark,
+	colbacktitle=monstertandark,
+	fuzzy shadow={0mm}{-3.5pt}{-0.5pt}{0.4mm}{black!60!white},
+	overlay={
+		\fill [fill=black] (frame.south west) -- ++(7pt,0) -- ++(0,-5pt) -- cycle;
+		\fill [fill=black] (frame.north west) -- ++(7pt,0) -- ++(0,5pt) -- cycle;
+		\fill [fill=black] (frame.north east) -- ++(-7pt,0) -- ++(0,5pt) -- cycle;
+		\fill [fill=black] (frame.south east) -- ++(-7pt,0) -- ++(0,-5pt) -- cycle;
+		},
+	after={\vspace{10pt plus 1pt}\noindent},
+	#1
+}

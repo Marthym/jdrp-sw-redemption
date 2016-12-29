@@ -1,0 +1,46 @@
+dist: trusty
+sudo: false
+addons:
+  apt:
+    packages:
+    - texlive-base
+    - texlive-xetex
+    - texlive-latex-recommended
+    - texlive-latex-extra
+    - texlive-extra-utils
+    - texlive-fonts-recommended
+    - texlive-font-utils
+    - texlive-lang-french
+    - texlive-math-extra
+    - texlive-pictures
+    - latex-xcolor
+    - texlive-bibtex-extra
+    - pgf
+    - lmodern
+    - biber
+    - latexmk
+
+script:
+- latexmk || true
+
+deploy:
+  - provider: releases
+    api_key:
+      secure: DgG2D29uPVbTLAfD3cte6hGT35CppoaNv56PENgvrHpfAIFWhxsjLy9x/qvEGXSPYA6bHpOIIrjT4cwBHZN7HxPsrtL+xuXCZYCP1G6XT8RteHAtCterOvvtLtihe2iW6PLxCgCR8etDpxKnE4s0/Jwt+s0eNm73Q7FsolN3aSk=
+    file: build/swr-livre-joueur.pdf
+    skip_cleanup: true
+    draft: true
+    on:
+      repo: Marthym/jdrp-sw-redemption  
+
+  - provider: releases
+    api_key:
+      secure: DgG2D29uPVbTLAfD3cte6hGT35CppoaNv56PENgvrHpfAIFWhxsjLy9x/qvEGXSPYA6bHpOIIrjT4cwBHZN7HxPsrtL+xuXCZYCP1G6XT8RteHAtCterOvvtLtihe2iW6PLxCgCR8etDpxKnE4s0/Jwt+s0eNm73Q7FsolN3aSk=
+    file: build/swr-livre-joueur.pdf
+    skip_cleanup: true
+    on:
+      tags: true
+      repo: Marthym/jdrp-sw-redemption
+
+notifications:
+  email: false
