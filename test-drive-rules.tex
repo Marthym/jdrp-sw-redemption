@@ -5,26 +5,27 @@
 \documentclass{jdrp}
 %\usepackage[bg-letter]{dnd} % Options: bg-a4, bg-letter, bg-full, bg-print, bg-none.
 
-\newcommand*{\docversion}{0.1}
-\newcommand*{\doctitle}{ Star Wars, Freedom Expansion}
+\newcommand*{\crg}{{\aurebesh\Large \$}} % Symbol for Galactic Credits
+
+\newcommand*{\docversion}{\citefield{jdrp-starwars}{version}}
+\newcommand*{\doctitle}{~\citetitle{jdrp-starwars}~}
 \newcommand*{\swfe}{{\jedifont \doctitle}}
 \title{\TitleFont \doctitle \normalsize \\v\docversion}
 \author{}
 \date{}
 
-\newcommand*{\crg}{{\aurebesh\Large \$}}
+\begin{document}
 
-\begin{document} % Start document
+	\AddToShipoutPicture*{\FirstPageBackground}
+	\include{chapitres/preambule/couverture}
+	\AddToShipoutPicture{\MainPageBackground}
+	\include{chapitres/preambule/preface}
+	\include{chapitres/regles/regles}
+	\include{chapitres/personnages/personnages}
+	\include{chapitres/equipement/equipement}
+	\include{chapitres/pouvoirs/pouvoirs}
+	\onecolumn
+	\nocite{*}
+	\printbibliography
 
-\AddToShipoutPicture*{\FirstPageBackground}
-\include{chapitres/preambule/couverture}
-\AddToShipoutPicture{\MainPageBackground}
-\include{chapitres/preambule/preface}
-\include{chapitres/regles/regles}
-\include{chapitres/personnages/personnages}
-\include{chapitres/equipement/equipement}
-\include{chapitres/pouvoirs/pouvoirs}
-\onecolumn
-\nocite{*}
-\printbibliography
-\end{document} % End document
+\end{document}

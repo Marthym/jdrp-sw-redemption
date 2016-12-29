@@ -29,6 +29,8 @@
 
 \RequirePackage{wrapfig}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Biblio management 
 \RequirePackage[style=verbose,sorting=none]{biblatex}
 \setlength\bibitemsep{1.5\itemsep}
 \bibliography{references}
@@ -151,7 +153,7 @@
 
 \RequirePackage{tabularx}
 
-\newenvironment{dnditemtable}[1][XX]{
+\newenvironment{itemtable}[1][XX]{
 	\par\vspace*{8pt}
 	\noindent
 	\rowcolors{1}{bgtan}{itemtablepink} % Alternate colors
