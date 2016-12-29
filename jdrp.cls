@@ -66,7 +66,10 @@
     BoldItalicFont=*-BoldItalic
 ]{NotoSans}
 
-\newfontfamily\jedifont[]{Star Jedi}
+\newfontfamily\jedifont[
+	Path=font/,
+    Extension=.ttf
+]{Starjedi}
 \newfontfamily\aurebesh[
 	Path=font/,
     Extension=.otf
