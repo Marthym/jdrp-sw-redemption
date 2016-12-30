@@ -15,8 +15,8 @@
 \RequirePackage[bottom]{footmisc} 		% Note de bas de page en bas plutôt que juste après le texte
 \RequirePackage{enumitem}
 \RequirePackage{lettrine}
-\RequirePackage[most]{tcolorbox}
 \RequirePackage[table]{xcolor}
+\RequirePackage[most]{tcolorbox}
 
 \RequirePackage{hyperref}
 \hypersetup{
