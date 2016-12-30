@@ -34,7 +34,6 @@
 % Biblio management 
 \RequirePackage[style=verbose,sorting=none]{biblatex}
 \setlength\bibitemsep{1.5\itemsep}
-\bibliography{references}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Backgrounding 
