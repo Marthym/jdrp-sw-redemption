@@ -12,7 +12,7 @@ Dans l’univers Star Wars il est vite tentant de vouloir se faire un personnage
 
 ## Contribution
 
-Comme je le disais plus haut, l’idée principale de ce document est de permettre à tous ceux qui le souhaitent de participer. Le document est donc écrit en LaTeXet disponible sur Github.
+Comme je le disais plus haut, l’idée principale de ce document est de permettre à tous ceux qui le souhaitent de participer. Le document est donc écrit en LaTeX et disponible sur Github.
 
 ## Licence
 
