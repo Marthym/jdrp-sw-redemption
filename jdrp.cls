@@ -61,15 +61,13 @@
 \setmainfont[Path=font/noto-sans/,
     Extension=.ttf,
     UprightFont= *-Regular,
+    SmallCapsFont=*-Regular,
     BoldFont=*-Bold,
     ItalicFont=*-Italic,
     BoldItalicFont=*-BoldItalic
 ]{NotoSans}
 
-\newfontfamily\jedifont[
-	Path=font/,
-    Extension=.ttf
-]{Starjedi}
+\newfontfamily{\jedifont}[Path=font/,Extension=.ttf,Ligatures=TeX]{Starjedi}
 \newfontfamily\aurebesh[
 	Path=font/,
     Extension=.otf
@@ -77,7 +75,12 @@
 
 % Lettrine
 \renewcommand{\LettrineFontHook}{\jedifont}
+\renewcommand{\LettrineTextFont}{\upshape}	% Remove samll-caps, Noto doesn't support
 \renewcommand{\DefaultNindent}{5pt}
+
+\DeclareFieldFormat{citetitle}{\textit{#1}}
+\DeclareFieldFormat{citeauthor}{#1}
+\DeclareFieldFormat{citefield}{#1}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Columns setup
@@ -122,7 +125,7 @@
 	}
 
 \fancyfoot[RO]{
-	\raisebox{-10pt}{\textsc{\textcolor{uppergold}{\nouppercase\rightmark}}}
+	\raisebox{-10pt}{\textcolor{uppergold}{\nouppercase\rightmark}}
 	\hspace*{1cm}
 	\textcolor{uppergold}{\thepage}
 	}
@@ -136,13 +139,13 @@
 
 % Adjust section and subsection colors and font (change 0em to 1em if you commented the removal of section numbering)
 \titleformat{\section}
-{\color{titlered}\bfseries\scshape\jedifont\Huge\raggedright}{\thesection}{0em}{}
+{\color{titlered}\jedifont\Huge\raggedright}{\thesection}{0em}{}
 
 \titleformat{\subsection}
-{\color{titlered}\scshape\Large\raggedright}{\thesubsection}{0em}{}[{\titleline{\color{undergold}\titlerule[1pt]}}]
+{\color{titlered}\Large\raggedright}{\thesubsection}{0em}{}[{\titleline{\color{undergold}\titlerule[1pt]}}]
 
 \titleformat{\subsubsection}
-{\color{titlered}\scshape\large\raggedright}{\thesubsubsection}{0em}{}[]
+{\color{titlered}\large\raggedright}{\thesubsubsection}{0em}{}[]
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -159,7 +162,7 @@
 	left=8pt,
 	right=8pt,
 	arc=0mm,
-	fonttitle=\scshape\bfseries\color{black},
+	fonttitle=\bfseries\color{black},
 	title=#2,
 	parbox = false,
 	colback=commentgreen,
@@ -192,7 +195,7 @@
 	boxsep=0.25ex,
 	left=8pt,
 	right=8pt,
-	fonttitle=\scshape\bfseries\color{black},
+	fonttitle=\bfseries\color{black},
 	title=#2,
 	arc=0mm,
 	parbox = false,
