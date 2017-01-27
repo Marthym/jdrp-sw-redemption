@@ -18,6 +18,7 @@
 \RequirePackage[table]{xcolor}
 \RequirePackage[most]{tcolorbox}
 
+
 \RequirePackage{hyperref}
 \hypersetup{
     colorlinks=true,                         
