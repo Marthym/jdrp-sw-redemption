@@ -34,18 +34,6 @@ deploy:
     api_key:
       secure: yo33FhlbiRGZ3VaeCEhBOrpcDlzDHu3GdxY5CliGiAR8+wti99AxuPG8vQQb/1YifPzywaGrEYpHssL7J/yhPhQKwlLeHvrNmGlKo2HB+F+nE7AzfBohP4xp+uYMLlgobSlHvOu/8goD7LtGiJtlf3emK4g1H5Q5Qo+796lFqtaqkKwovyfxZku1supF9iRgKYlDyfszm7cdLs78KOqAMRxXutUgx9sp1TAROrf3NPGAQMJFm8i0rZgtsKZPQhyJi4g+hj7ziCmTWW7KvLQB/Jl9uRm+srGglVUiwHf0equQKNNQLuzEq5uuVhK7mnApxl0G9fLOJZMlDtasUbPCKViLgPBj/OIUX5d2E/xZ3JYo5IXR/BlBBHa03tKCWiq4TX2/lxhkZJ+7meHZEYQhhMmIQRhK+bfPZ0yM5P9XKNS/BPpAlfZDmqc0mjNBQOccWR+xkQICAzXtzVEeMW1c7vqR0ILy/FwwvCShi8SMN/yvWR9hD23lvrtBXPz3S5AkEWaPoAKfxvtMmtehiiXUYSXzyDn+h3JycG3Vnbwdhu92VG9zoYLtcf7hy2+Jo5wiOcj6u+Gu3+811wDag1kixmNVTWGIeuxklVx/qMbsSo3cAdX6kLk5D8ZNdr7AvaY0O0cvRy5/sUem1xpXEmelASHdFhq5/f7jCXNdk2N7qso=
     file: 
-      - "build/SW-Redemption, Livre du joueur.pdf"
-      - "img/swr-fiche-perso.pdf"
-    skip_cleanup: true
-    overwrite: true
-    draft: true
-    on:
-      repo: Marthym/jdrp-sw-redemption  
-
-  - provider: releases
-    api_key:
-      secure: yo33FhlbiRGZ3VaeCEhBOrpcDlzDHu3GdxY5CliGiAR8+wti99AxuPG8vQQb/1YifPzywaGrEYpHssL7J/yhPhQKwlLeHvrNmGlKo2HB+F+nE7AzfBohP4xp+uYMLlgobSlHvOu/8goD7LtGiJtlf3emK4g1H5Q5Qo+796lFqtaqkKwovyfxZku1supF9iRgKYlDyfszm7cdLs78KOqAMRxXutUgx9sp1TAROrf3NPGAQMJFm8i0rZgtsKZPQhyJi4g+hj7ziCmTWW7KvLQB/Jl9uRm+srGglVUiwHf0equQKNNQLuzEq5uuVhK7mnApxl0G9fLOJZMlDtasUbPCKViLgPBj/OIUX5d2E/xZ3JYo5IXR/BlBBHa03tKCWiq4TX2/lxhkZJ+7meHZEYQhhMmIQRhK+bfPZ0yM5P9XKNS/BPpAlfZDmqc0mjNBQOccWR+xkQICAzXtzVEeMW1c7vqR0ILy/FwwvCShi8SMN/yvWR9hD23lvrtBXPz3S5AkEWaPoAKfxvtMmtehiiXUYSXzyDn+h3JycG3Vnbwdhu92VG9zoYLtcf7hy2+Jo5wiOcj6u+Gu3+811wDag1kixmNVTWGIeuxklVx/qMbsSo3cAdX6kLk5D8ZNdr7AvaY0O0cvRy5/sUem1xpXEmelASHdFhq5/f7jCXNdk2N7qso=
-    file: 
       - "build/SW-Redemption, Livre du joueur-${TRAVIS_TAG}.pdf"
       - "build/swr-fiche-perso-${TRAVIS_TAG}.pdf"
     skip_cleanup: true

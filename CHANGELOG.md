@@ -1,5 +1,7 @@
 ## v1.1.0 (_2017-01-29_)
-* Suppression de l'Atout *Florentine* pas vraiment utile dans l'univers de Star Wars, surtout en comparaison du combat à deux mains.
+* Diverses correction d‘orthographe
+* Ajout de la fiche de personnage
+* Suppression de l‘Atout *Florentine* pas vraiment utile dans l‘univers de Star Wars, surtout en comparaison du combat à deux mains.
 * Ajout des Atouts de combat: 
   * *Shii-Cho*: Combat au Sabre Laser
   * *Soresu*: Défense au Sabre Laser
