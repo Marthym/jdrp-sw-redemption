@@ -58,6 +58,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Fonts
 \RequirePackage[quiet]{fontspec}
+\RequirePackage{xunicode}
 
 \setmainfont[Path=font/noto-sans/,
     Extension=.ttf,
