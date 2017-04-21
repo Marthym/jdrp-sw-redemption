@@ -1,5 +1,12 @@
 dist: trusty
 sudo: false
+
+git:
+  submodules: false
+  
+before_install:
+  - git submodule update --init --remote --recursive
+
 addons:
   apt:
     packages:
@@ -22,7 +29,7 @@ addons:
     - ghostscript
 
 script:
-- latexmk || true
+- latexmk -f -r swr-class/latexmkrc || true
 - gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.5 -dNOPAUSE -dQUIET -dBATCH -dPDFSETTINGS=/ebook -sOutputFile="build/SW-Redemption, Livre du joueur.pdf" build/swr-livre-joueur.pdf
 
 before_deploy:

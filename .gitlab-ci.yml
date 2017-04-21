@@ -1,0 +1,34 @@
+image: marthym/latex:1.0.0
+variables:
+  GIT_SUBMODULE_STRATEGY: recursive
+
+swr-SNAPSHOT:
+  stage: build
+  cache: 
+    paths:
+      - build
+  script:
+    - latexmk -f -r swr-class/latexmkrc || true
+    - mv "build/swr-livre-joueur.pdf" "build/SW-Redemption, Livre du joueur.pdf"
+    - mv "img/swr-fiche-perso.pdf" "build/swr-fiche-perso.pdf"
+
+  artifacts:
+    expire_in: 1 day
+    paths:
+    - "build/SW-Redemption, Livre du joueur.pdf"
+    - "build/swr-fiche-perso.pdf"
+  allow_failure: true
+
+swr-RELEASE:
+  stage: deploy
+  script:
+      - cp "build/SW-Redemption, Livre du joueur.pdf" "SW-Redemption, Livre du joueur-${CI_COMMIT_TAG}.pdf"
+      - cp "img/swr-fiche-perso.pdf" "swr-fiche-perso-${CI_COMMIT_TAG}.pdf"
+
+  only:
+    - tags
+  artifacts:
+    name: "SW-Redemption, Livre du joueur v$CI_COMMIT_TAG"
+    paths:
+    - "SW-Redemption, Livre du joueur-${CI_COMMIT_TAG}.pdf"
+    - "swr-fiche-perso-${CI_COMMIT_TAG}.pdf"
