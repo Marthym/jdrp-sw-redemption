@@ -1,3 +1,9 @@
+👇👇👇🔥🔥This repository was relocated to🔥🔥👇👇👇
+
+
+https://github.com/star-wars-redemption/jdrp-livre-de-base
+
+
 # Star Wars Redemption
 
 Encore une autre adaptation de Savage Worlds à <span>Star Wars</span> ? C’est vrai, il en existe déjà plusieurs comme Star Wars Reloaded ou Star Wars Unchained. Mais toutes les versions que j’ai trouvée présentent des défauts: fautes d’orthographe ou de typo, traductions relatives, trop ou pas assez de détails, … Mais surtout, aucune des versions que j’ai trouvées n’est collaborative, il n’est pas possible de proposer des corrections ou des améliorations ni de se *forker* sa propre version.
